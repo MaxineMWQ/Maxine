@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigger actions when image has been found</title>
+
+    <script src="../../../build/aframe-master.min.js"></script>
+    <script src="../../../build/aframe-ar-nft.js"></script>
+    <style>
+        .arjs-loader {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arjs-loader div {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
+        }
+    </style>
+    <script>
+        // 注册markerhandler组件
+        // 该组件中注册了，当场景中检测到图像时触发的事件
+        AFRAME.registerComponent('markerhandler', {
+            init: function () {
+                this.el.sceneEl.addEventListener('markerFound', () => {
+                    alert('hello ar!')
+                });
+            }
+        });
+    </script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
+    <a-scene>
+        <a-nft markerhandler type="nft" url="./trex/trex-image"></a-nft>
+    </a-scene>
+</body>
+
+</html>
