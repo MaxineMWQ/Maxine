@@ -7,8 +7,8 @@
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
                     <!-- 光源 -->
-        <a-light type="ambient" color="#ffffff"></a-light>
-        <a-light type="point" intensity="2" position="3 6 6"></a-light>
+        <a-light type="ambient" color="#ffffff" position="1 1 0"></a-light>
+        <a-light type="point"  color="#ffffff" intensity="6" position="0 1 1"></a-light>
         <a-marker preset="hiro">
             <!-- <a-entity
             position="0 0 0"
@@ -28,9 +28,6 @@
             scale="1 1 1"
             gltf-model="https://demo-xiangmu.obs.cn-east-3.myhuaweicloud.com/luoyaongmuseum/15.glb"
             ></a-entity>
-            <!-- 光源 -->
-            <a-light type="ambient" color="#445451"></a-light>
-            <a-light type="point" intensity="2" position="2 4 4"></a-light>
         </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
